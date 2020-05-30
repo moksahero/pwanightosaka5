@@ -1,6 +1,3 @@
-# root dir html files
-/*.html
-
 # test stuff
 /examples/*.html
 !/examples/docinfo*.html
