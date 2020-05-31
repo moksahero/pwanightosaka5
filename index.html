@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Why Jamstack / Why PWA</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>
+						Why Jamstack?<br>
+						Why PWA?
+					</h3>
+					<p>PWA Night OSAKA vol.5</p>
+					<p>
+						<small>by Takeshi Amano</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>天野の紹介</h3>
+					<p class="fragment">広島出身</p>
+					<p class="fragment">カナダモントリオールのコンコーディア大学をCSと経済学の学位を取得して卒業</p>
+					<p class="fragment">GengoやPayPalや電通で働く</p>
+					<p class="fragment">eBay出品ツールNijuyonを開発して、世界中を旅しながら仕事</p>
+					<p class="fragment">2019年11月からアムステルダム在住</p>
+					<p class="fragment">日本に帰りたいけど帰れない...</p>
+				</section>
+
+				<section>
+					<h3>天野の仕事</h3>
+					<p class="fragment">合同会社 池田山商会代表</p>
+					<p class="fragment">いろんなサイトのPWA化</p>
+					<p class="fragment">IR情報提供、インフルエンサー、EC...</p>
+					<p class="fragment">ウクライナの開発パートナー会社</p>
+					<p class="fragment">ヨーロッパ進出企業支援</p>
+					<p class="fragment">お仕事絶賛募集中</p>
+				</section>
+
+				<section>
+					<h3>突然ですが</h3>
+				</section>
+
+				<section>
+					<h3>今日朝起きてスマホで<br>どのアプリを使いました？</h3>
+					<p class="fragment">Facebook</p>
+					<p class="fragment">インスタ</p>
+					<p class="fragment">Googleなんとか</p>
+					<p class="fragment">Amazon...</p>
+				</section>
+
+				<section>
+					<h3>共通して言えること</h3>
+					<p class="fragment">世界最速</p>
+					<p class="fragment">これ以上速いサービスは無い</p>
+					<p class="fragment">Service Workerとかもバッチリ</p>
+				</section>
+
+				<section>
+					<h3>ユーザーの期待値</h3>
+					<p class="fragment">普段使っているアプリが最速</p>
+					<p class="fragment">それ以外は全部遅い</p>
+					<p class="fragment">キャッシュとかもバリバリ効いている</p>
+				</section>
+
+				<section>
+					<h3>サイトが少しでも遅いと...</h3>
+					<p class="fragment">遅いサイト</p>
+					<p class="fragment">使いにくいサイト</p>
+					<p class="fragment">キャッシュが効いてないサイト</p>
+					<p class="fragment">オリンピック -> 県大会</p>
+				</section>
+
+				<section>
+					<h3>遅いサイトのコスト</h3>
+				</section>
+
+				<section>
+					<h3>直帰率の増加</h3>
+					<img width="600" src="images/bouncerate.png" /><br>
+					<small>出典: Think with Google</small>
+				</section>
+
+				<section>
+					<h3>１秒ロードタイムが遅れる</h3>
+					<p class="fragment">7%コンバージョン率が下がる</p>
+				</section>
+
+				<section>
+					<h3>買い物を途中で辞める</h3>
+					<p class="fragment">67%のユーザーが遅いサイトでは買い物を辞める</p>
+				</section>
+
+				<section>
+					<h3>広告の表示に追加で2秒かかる</h3>
+					<p class="fragment">広告の売上が4%下がる (Bing)</p>
+				</section>
+
+				<section>
+					<h3>Amazonの場合</h3>
+					<p class="fragment">1秒のロードタイムの遅れ</p>
+					<p class="fragment">年間16億ドル(約1720億円)の損失</p>
+				</section>
+
+				<section>
+					<h3>遅いサイト</h3>
+					<p class="fragment">80%のユーザーは遅いサイトに戻らない</p>
+					<p class="fragment">SEOのランキングが下がる</p>
+					<p class="fragment">競合サイトにいく</p>
+				</section>
+
+				<section>
+					<h3>遅いサイトのUX</h3>
+					<p class="fragment">67%のユーザーがサイトは<br>4秒以内にロードすると期待</p>
+					<p class="fragment">85%のユーザーがモバイルもPC版も<br>同じスピードで有ることを期待</p>
+					<p class="fragment">71%のユーザーが遅いサイトのブランドを信じない</p>
+					<p class="fragment">77%のユーザーがサイトが<br>遅いことをSNSとか友達に伝える</p>
+				</section>
+
+				<section>
+					<h3>遅いサイト</h3>
+					<p class="fragment">結論：悪</p>
+				</section>
+
+				<section>
+					<h3>解決方法</h3>
+					<p class="fragment">Jamstack</p>
+				</section>
+
+				<section>
+					<h3>Jamstackとは？</h3>
+					<p class="fragment"><span style="font-size: 150%">J</span>avascript</p>
+					<p class="fragment"><span style="font-size: 150%">A</span>PIs</p>
+					<p class="fragment"><span style="font-size: 150%">M</span>arkup</p>
+				</section>
+
+				<section>
+					<h3>Javascript</h3>
+					<p class="fragment">クライアント側で動作</p>
+					<p class="fragment">React, Vue, Svelte</p>
+					<p class="fragment">Vanilla(素)のJS</p>
+				</section>
+
+				<section>
+					<h3>APIs</h3>
+					<p class="fragment">データベースへのアクセスはAPI経由</p>
+					<p class="fragment">REST APIs, GraphQL</p>
+					<p class="fragment">Headless CMS, Wordpress, Shopify</p>
+				</section>
+
+				<section>
+					<h3>Markup</h3>
+					<p class="fragment">デプロイ時に静的にファイルを生成</p>
+					<p class="fragment">ファイルはCDNに置かれる</p>
+					<p class="fragment">Gatsby (React), Gridsome (Vue)</p>
+					<p class="fragment">Svelte (Sapper), 11ty</p>
+				</section>
+
+				<section>
+					<h3>Jamstackの技術</h3>
+					<p class="fragment">静的ファイル生成</p>
+					<p class="fragment">CI/CD with git</p>
+					<p class="fragment">CDN</p>
+					<p class="fragment">data update / cache無効化</p>
+				</section>
+
+				<section>
+					<h3>静的ファイル生成</h3>
+					<p class="fragment">様々なデータソースからデータ取得</p>
+					<p class="fragment">Gatsbyのテンプレートでデータ整形</p>
+					<p class="fragment">画像ファイル最適化</p>
+					<p class="fragment">静的htmlファイルを生成</p>
+				</section>
+
+				<section>
+					<h3>CI/CD with git</h3>
+					<p class="fragment">Github, Gitlabのレポジトリにpush</p>
+					<p class="fragment">Netlifyでデプロイが開始</p>
+				</section>
+
+				<section>
+					<h3>CDNにデプロイ</h3>
+					<p class="fragment">静的htmlファイルが生成</p>
+					<p class="fragment">CDNにデプロイ</p>
+					<p class="fragment">Netlify, AWS S3, Heroku</p>
+					<p class="fragment">Azure Static Web Apps, etc...</p>
+				</section>
+
+				<section>
+					<h3>Jamstack開発</h3>
+					<img class="plain" src="images/jam1.png" />
+				</section>
+
+				<section>
+					<h3>Jamstackリクエスト</h3>
+					<img class="plain" src="images/jam2.png" />
+				</section>
+
+				<section>
+					<h3>NetlifyのCDN</h3>
+					<img class="plain" src="images/cdn.png" />
+				</section>
+
+				<section>
+					<h3>LAMP</h3>
+					<img class="plain" src="images/lamp.png" />
+				</section>
+
+				<section>
+					<h3>Gatsby Cloud</h3>
+					<p class="fragment">Incremental Builds: 差分だけのビルド</p>
+					<p class="fragment">Deploy Previews</p>
+					<p class="fragment">自動Lighthouseチェック</p>
+				</section>
+
+				<section>
+					<h3>Jamstackの事例</h3>
+				</section>
+
+				<section>
+					<h3>Smashing Magazine</h3>
+					<p>
+						<img class="plain" src="images/smashing.png" />
+					</p>
+					<p><small>https://www.smashingmagazine.com/2020/01/migration-from-wordpress-to-jamstack/</small></p>
+				</section>
+
+				<section>
+					<h3>Impossible Foods</h3>
+					<p>
+						<img class="plain" src="images/impossible.png" />
+					</p>
+					<p><small>https://impossiblefoods.com/</small></p>
+				</section>
+
+				<section>
+					<h3>Impossible FoodsのJamstackへの移行</h3>
+					<p class="fragment">page views 92%増加</p>
+					<p class="fragment">unique users 61%増加</p>
+				</section>
+
+				<section>
+					<h3>StriVectin</h3>
+					<p>
+						<img class="plain" src="images/stri.png" />
+					</p>
+					<p><small>https://www.strivectin.com</small></p>
+				</section>
+
+				<section>
+					<h3>StriVectinのJamstackへの移行</h3>
+					<p class="fragment">コードのファイル数が20,000から300に</p>
+					<p class="fragment">月$2000かかっていたホスティングが一日数ドルに</p>
+					<p class="fragment">オーガニックの流入が継続して20%増加</p>
+					<p class="fragment"><small>出典: https://softblues.io/what-is-jamstack-gatsby-and-how-it-can-improve-your-web-experience/</small></p>
+				</section>
+
+				<section>
+					<h3>The COVID Tracking Project</h3>
+					<p>
+						<img class="plain" src="images/covid.png" />
+					</p>
+					<p><small>https://covidtracking.com/</small></p>
+				</section>
+
+				<section>
+					<h3>The COVID Tracking Project</h3>
+					<p class="fragment">Netlify, Gatsby</p>
+					<p class="fragment">データはContentfulとGoogle Sheets</p>
+					<p class="fragment">３ヶ月でゼロから一日200万APIアクセス</p>
+				</section>
+
+				<section>
+					<h3>Whitehouseが公式データの<br>代わりに扱うと発表</h3>
+					<p>
+						<img class="plain" src="images/covid_spike.png" />
+					</p>
+					<p><small>https://www.youtube.com/watch?v=ryngYoHXNfQ</small></p>
+					<p class="fragment">PVが１日150万を超えたが全く気が付かなかった</p>
+				</section>
+
+				<section>
+					<h3>今日朝起きてスマホで<br>どのアプリを使いました？</h3>
+					<p>Facebook</p>
+					<p>インスタ</p>
+					<p>Googleなんとか</p>
+					<p>Amazon...</p>
+				</section>
+
+				<section>
+					<h3>共通して言えること</h3>
+					<p class="fragment">スマホに特化したUI</p>
+					<p class="fragment">パソコン版は見たこと無い</p>
+				</section>
+
+				<section>
+					<h3>ユーザーはスマホを使っている</h3>
+					<p class="fragment">ほとんどがネイティブアプリ</p>
+					<p class="fragment">webはちょこちょこ</p>
+					<p class="fragment">webとネイティブアプリを<br>意図的に使い分けている訳ではない</p>
+				</section>
+
+				<section>
+					<h3>スマホユーザーの期待値</h3>
+					<p class="fragment">スマホ用に洗練されたUI</p>
+					<p class="fragment">サクサク動く</p>
+					<p class="fragment">電波が悪くなっても落ちない</p>
+				</section>
+
+				<section>
+					<h3>スマホの中でネイティブアプリ<br>みたいに動作しない</h3>
+					<p class="fragment">結論：悪</p>
+				</section>
+
+				<section>
+					<h3>解決方法</h3>
+					<p class="fragment">PWA</p>
+				</section>
+
+				<section>
+					<h3>PWA</h3>
+					<p class="fragment">Webサイトとして動作</p>
+					<p class="fragment">AndroidとiOS両方で動作</p>
+					<p class="fragment">ネイティブアプリみたいなUI</p>
+					<p class="fragment">ネイティブアプリみたいにさくさく動く</p>
+					<p class="fragment">Service Workerで接続が切れても使える</p>
+				</section>
+
+				<section>
+					<h3>PWA事例</h3>
+				</section>
+
+				<section>
+					<h3>Rooted Objects</h3>
+					<p>
+						<img class="plain" src="images/rooted.png" />
+					</p>
+					<p><small>https://rootedobjects.com</small></p>
+				</section>
+
+				<section>
+					<h3>Rooted Object PWA化</h3>
+					<p class="fragment">インドのECサイト</p>
+					<p class="fragment">VueStorefrontでの実装</p>
+					<p class="fragment">ページロード時間改善、直帰率改善</p>
+					<p class="fragment">コンバージョン率162%アップ</p>
+					<p class="fragment">ページロード時間25%改善</p>
+					<p class="fragment">売上44%アップ</p>
+					<p class="fragment"><small>出典: https://www.vuestorefront.io/rootedobjects-case-study</small></p>
+				</section>
+
+				<section>
+					<h3>Petlove</h3>
+					<p>
+						<img class="plain" src="images/petlove.jpeg" />
+					</p>
+					<p><small>https://www.petlove.com.br</small></p>
+					<p class="fragment"><small>出典: https://getshogun.com/learn/dtc-brands-progressive-web-apps</small></p>
+				</section>
+
+				<section>
+					<h3>Petlove PWA化</h3>
+					<p class="fragment">ブラジルのペット用品ECサイト</p>
+					<p class="fragment">サイト滞在時間 2.7倍</p>
+					<p class="fragment">コンバージョン率 2.8倍</p>
+					<p class="fragment">データダウンロード減少</p>
+					<p class="fragment">ブラジルでは2Gや3Gで使っているユーザーが多い</p>
+				</section>
+
+				<section>
+					<h3>Paula's Choice</h3>
+					<p>
+						<img class="plain" src="images/paula.gif" />
+					</p>
+					<p><small>https://www.paulaschoice.com</small></p>
+				</section>
+
+				<section>
+					<h3>Paula's Choice PWA化</h3>
+					<p class="fragment">スキンケアのECサイト</p>
+					<p class="fragment">グローバルで展開</p>
+					<p class="fragment">商品閲覧時間 55%アップ</p>
+					<p class="fragment">コンバージョン率 46%アップ</p>
+					<p class="fragment">売上 40%アップ</p>
+				</section>
+
+				<section>
+					<h3>まとめ</h3>
+					<p class="fragment">遅いサイト -> 悪</p>
+					<p class="fragment">スマホで使いにくいサイト -> 悪</p>
+					<p class="fragment">Jamstackでパフォーマンスを劇的に改善</p>
+					<p class="fragment">PWAでユーザー体験改善</p>
+					<p class="fragment">売上げアップ！</p>
+				</section>
+
+				<section>
+					<h3>ありがとうございました</h3>
+					<p>合同会社　池田山商会</p>
+					<p>天野たけし</p>
+					<p>amano@ikedayama.jp</p>
+					<p>twitter.com/moksahero</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
