@@ -1,0 +1,17 @@
+@startuml
+
+    actor ブラウザ as BR
+    participant " Linux" as LI
+    participant " Apache" as AP
+    participant " PHP" as PP
+    participant " MySQL" as MS
+    BR -> LI: リクエスト
+    LI -> AP: リクエスト
+    AP -> PP: htmlテンプレート
+    PP -> MS: データリクエスト
+    MS -> PP: データレスポンス
+    PP -> AP: html作成
+    AP -> LI: レスポンス
+    LI -> BR: レスポンス
+
+@endulmpla

@@ -1,0 +1,14 @@
+@startuml
+
+    actor 編集者 as ED
+    participant " データソース" as DS
+    participant " Netlifyビルド" as NB
+    participant " Netlify CDN" as NC
+    actor ブラウザ as BR
+    ED -> DS: コンテンツ更新
+    DS -> NB: Webhook
+    NB -> NC: ビルド&デプロイ
+    BR -> NC: リクエスト
+    NC -> BR: レスポンス (html)
+
+@endulmpla
